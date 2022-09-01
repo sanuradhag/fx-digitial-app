@@ -19,7 +19,7 @@ const Search = (props: SearchProps) => {
             className="search-input"
             value={searchText}
             placeholder="Filter by name"
-            onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value.toLowerCase())}
         />
     </div>);
 };
