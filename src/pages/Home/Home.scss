@@ -1,0 +1,14 @@
+.home-page-wrapper {
+  .home-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4.5rem 0 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home-header-wrapper {
+    flex-direction: column;
+  }
+}
