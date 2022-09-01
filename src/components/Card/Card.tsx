@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
+
 import { CardProps } from '../../interfaces/CardProps';
 
 import './Card.scss';
@@ -11,7 +13,7 @@ const Card = (props: CardProps) => {
     const navigate = useNavigate();
 
     return (
-        <div className='card-wrapper' onClick={() => navigate(`/elephants/${item._id}`)}>
+        <div className='card-wrapper' onClick={() => navigate(`/elephants/${item.name}`)}>
             <img src={image} className='card-image' alt='card-image'/>
             <div className='detail-wrapper'>
                 <div className='card-title'>{name}</div>
