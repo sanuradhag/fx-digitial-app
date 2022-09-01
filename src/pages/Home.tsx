@@ -1,14 +1,40 @@
-import React from 'react';
-import Card from '../components/Card';
-import dummyData from '../dummyData.json'; // To be replaced with your api response data
+import React, { useCallback, useEffect, useState } from 'react';
+
+import { api } from '../api';
+import ItemList from '../components/ItemList/ItemList';
+import Search from '../components/Search/Search';
+import { BASE_URL } from '../constants';
+import { Elephant } from '../interfaces/Elephant';
 
 
 export const Home = () => {
+
+    const [elephantList, setElephantList] = useState<Elephant[]>([]);
+
+    const getBookList = useCallback(async () => {
+        try {
+            const response = await api.get<Elephant[]>(`${BASE_URL}`);
+            setElephantList(response.slice(20, 30));
+
+        } catch (e) {
+            console.log('An error occurred while fetching the book list', e);
+        }
+    }, []);
+    
+    useEffect(() => {
+        getBookList();
+    
+        return () => {
+            setElephantList([]);
+        };
+    }, []);
+      
     return (
         <>
-            <h1>Space X Ships</h1>
-            <div className="App" style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', rowGap: '10px', columnGap: '20px'}}>
-                <Card image={dummyData.image} name={dummyData.name} home_port={dummyData.home_port} roles={dummyData.roles} />
+            <h1>The Elephants</h1>
+            <div>
+                <Search/>
+                <ItemList items={elephantList}/>
             </div>
         </>
     );
