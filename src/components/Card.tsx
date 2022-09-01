@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 interface CardProps {
-  image: any; 
-  name: any;
-  home_port: any;
-  roles: any;
+  image: string; 
+  name: string;
+  home_port: string;
+  roles: string[];
 }
 
 /**
@@ -16,17 +16,17 @@ interface CardProps {
  * 
  */
 const Card = (props: CardProps) => {
-  const {image, name, home_port, roles} = props;
-  return (
-    <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "15px", color: "#333", border: "solid 1px #333", borderRadius: "5px"}}>
-      <div style={{width: "90%", height: "200px", backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center"}}></div>
-      <h1>{name}</h1>
-      <h2>{home_port}</h2>
-      <ul>
-        {roles.map((role: any) => <li key={role}>{role}</li>)}
-      </ul>
-    </div>
-  )
-}
+    const {image, name, home_port, roles} = props;
+    return (
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '15px', color: '#333', border: 'solid 1px #333', borderRadius: '5px'}}>
+            <div style={{width: '90%', height: '200px', backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+            <h1>{name}</h1>
+            <h2>{home_port}</h2>
+            <ul>
+                {roles.map((role: string) => <li key={role}>{role}</li>)}
+            </ul>
+        </div>
+    );
+};
 
-export default Card
+export default Card;
