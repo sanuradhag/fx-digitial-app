@@ -3,6 +3,7 @@
 /* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -13,6 +14,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public', 'index.html'),
+        }),
+        new Dotenv({
+            path: path.resolve(process.cwd(), '.env'),
         }),
     ],
     module: {
@@ -29,7 +33,7 @@ module.exports = {
             },
             {
                 test: /\.(css|scss)$/,
-                use: ['style-loader', 'css-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             { 
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,

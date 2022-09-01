@@ -1,0 +1,37 @@
+@import '../../styles/theme.scss';
+
+.card-wrapper {
+  width: 15rem;
+  height: 20rem;
+  border: 1px solid $color-black;
+  margin: 1rem;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 9px 6px -3px #000000; 
+  box-shadow: 0px 9px 6px -3px #000000;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: all ease-in 0.7ms;
+  }
+
+  .card-image {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+
+  .detail-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      max-width: 14rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
