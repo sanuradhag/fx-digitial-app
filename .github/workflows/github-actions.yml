@@ -1,0 +1,13 @@
+name: Deploy production
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy-prod
+        run: curl -X POST -d '{}' https://api.netlify.com/build_hooks/6310c89e4776d9074b7f1a10

@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/816aec30-5dec-4882-879d-163775020930/deploy-status)](https://app.netlify.com/sites/sparkling-taffy-52238b/deploys)
 # Take-home challenge instructions
 
 ### Aim of this challenge:
