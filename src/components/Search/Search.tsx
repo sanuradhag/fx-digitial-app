@@ -8,7 +8,7 @@ import './Search.scss';
 const Search = (props: SearchProps) => {
     const {onSearch} = props;
     const [searchText, setSearchText] = useState<string>('');
-    const debouncedSearchTerm: string = useDebounce<string>(searchText, 1200);
+    const debouncedSearchTerm: string = useDebounce<string>(searchText, 1200); // add a debounce to wait for 1220 milliseconds
 
     useEffect(() => {
         onSearch(searchText);

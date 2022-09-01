@@ -20,7 +20,7 @@ export const Home = () => {
             setElephantList(data);
             setDisplayElephantList(data);
         } catch (e) {
-            console.log('An error occurred while fetching the book list', e);
+            console.log('An error occurred while fetching the data', e);
         }
     }, [queryText]);
 
